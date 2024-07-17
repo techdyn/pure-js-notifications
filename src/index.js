@@ -7,6 +7,7 @@ import {
 	append,
 	createElement,
 	createParagraph,
+	createParagraphHTML,
 	isString
 } from './helpers';
 
@@ -18,7 +19,8 @@ import {
 		positionClass: 'nfc-top-right',
 		onclick: false,
 		showDuration: 3500,
-		theme: 'success'
+		theme: 'success',
+		allowHTML: false
 	};
 
 	function configureOptions(options) {
@@ -103,8 +105,13 @@ import {
 			}
 
 			// Append title and message
-			isString(title) && title.length && append(notificationEl, createParagraph('ncf-title')(title));
-			isString(message) && message.length && append(notificationEl, createParagraph('nfc-message')(message));
+			if (options.allowHTML) {
+				isString(title) && title.length && append(notificationEl, createParagraphHTML('ncf-title')(title));
+				isString(message) && message.length && append(notificationEl, createParagraphHTML('nfc-message')(message));
+			} else {
+				isString(title) && title.length && append(notificationEl, createParagraph('ncf-title')(title));
+				isString(message) && message.length && append(notificationEl, createParagraph('nfc-message')(message));
+			}
 
 			// Append to container
 			append(container, notificationEl);

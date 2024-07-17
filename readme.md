@@ -1,27 +1,17 @@
-[![Build Status](https://travis-ci.org/JamieLivingstone/Notifications.svg?branch=master)](https://travis-ci.org/JamieLivingstone/Notifications)
-
 # Notifications
 **Notifications** is a Javascript library for notifications heavily inspired by toastr but does not require any dependencies such as jQuery.
 
 Works on browsers: IE9+, Safari, Chrome, FireFox, opera, edge
 
-## npm Installation
-Do either
+## Yarn Installation
 ```
-npm i styled-notifications
-```
-or add the following to your `package.json`:
-```
-"dependencies": {
-  "styled-notifications": "^1.0.1"
-},
+yarn add https://github.com/techdyn/pure-js-notifications.git
 ```
 
 ## Installation
 Download files from the dist folder and then:
-1. Link to notifications.css `<link href="notifications.css" rel="stylesheet"/>`
-
-2. Link to notifications.js `<script src="notifications.js"></script>`
+1. JS: `require('pure-js-notifications/dist/notifications.js');`
+2. SCSS: `@import "~pure-js-notifications/dist/notifications.css";`
 
 ## Usage
 ### Custom options
@@ -31,14 +21,16 @@ Download files from the dist folder and then:
 - onClick <function(event)> - Call a callback function when a click is invoked on a notification.
 - showDuration <integer> - Milliseconds the notification should be visible (0 for a notification that will remain open until clicked)
 - theme <string> - Set the position of the notification dialog. Accepted positions: ('success', 'info', 'warning', 'error', 'A custom clasName').
+- allowHTML <bool> - Allow HTML in notification title/messages (content is sanitized).
 ```
 const defaultOptions = {
-		closeOnClick: true,
-		displayCloseButton: false,
-		positionClass: 'nfc-top-right',
-		onclick: false,
-		showDuration: 3500,
-		theme: 'success'
+    closeOnClick: true,
+    displayCloseButton: false,
+    positionClass: 'nfc-top-right',
+    onclick: false,
+    showDuration: 3500,
+    theme: 'success',
+    allowHTML: false
 };
 ```
 
@@ -74,9 +66,3 @@ window.createNotification({
     message: 'I have some information for you...'
 });
 ```
-
-### Todo
-~~1. Add to NPM~~
-2. Improve documentation
-3. Further device testing
-4. Add contributor instructions
