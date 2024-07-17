@@ -1,5 +1,5 @@
 {
-  "name": "styled-notifications",
+  "name": "pure-js-notifications",
   "version": "1.1.0",
   "description": "A simple JavaScript notifications library",
   "main": "dist/notifications.js",
@@ -42,9 +42,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JamieLivingstone/Notifications/issues"
+    "url": "https://github.com/techdyn/pure-js-notifications/issues"
   },
-  "homepage": "https://github.com/JamieLivingstone/Notifications#readme",
+  "homepage": "https://github.com/techdyn/pure-js-notifications#readme",
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.4",
